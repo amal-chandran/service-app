@@ -13,5 +13,29 @@
         "model-name": "RoleHasPermission",
         "resource-file": "role_has_permissions.json",
         "table-name": "role_has_permissions"
+    },
+    {
+        "model-name": "Category",
+        "resource-file": "categories.json"
+    },
+    {
+        "model-name": "Service",
+        "resource-file": "services.json"
+    },
+    {
+        "model-name": "Review",
+        "resource-file": "reviews.json"
+    },
+    {
+        "model-name": "Enquiry",
+        "resource-file": "enquiries.json"
+    },
+    {
+        "model-name": "Message",
+        "resource-file": "messages.json"
+    },
+    {
+        "model-name": "Address",
+        "resource-file": "addresses.json"
     }
 ]
