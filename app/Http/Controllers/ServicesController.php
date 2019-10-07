@@ -18,9 +18,34 @@ class ServicesController extends Controller
      *
      * @return Illuminate\View\View
      */
-    public function index()
+
+    public function index(Request $request, $category_id = null)
     {
-        $services = Service::with('creator', 'category')->paginate(25);
+
+        // if ($request->user()->hasRole('admin')) {
+
+        if (!empty($category_id)) {
+
+            $services = Service::with('creator', 'category')->where('category_id', '=', $category_id)->paginate(25);
+        } else {
+
+            $services = Service::with('creator', 'category')->paginate(25);
+        }
+        // } else {
+        //     if (!empty($category_id)) {
+
+        //         $services = Service::with('creator', 'category')
+
+        //             ->where('created_by', '=', $request->user()->id)
+        //             ->where('category_id', '=', $category_id)->paginate(25);
+        //     } else {
+
+        //         $services = Service::with('creator', 'category')
+        //             ->where('created_by', '=', $request->user()->id)
+        //             ->paginate(25);
+        //     }
+        // }
+
 
         return view('services.index', compact('services'));
     }

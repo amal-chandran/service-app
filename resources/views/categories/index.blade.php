@@ -50,30 +50,37 @@
                         'route' => ['categories.category.destroy', $category->id],
                         'style' => 'display: inline;',
                         ]) !!}
-                        <div class="btn-group btn-group-xs float-right" role="group">
-                            @can('view-categories')
-                            <a href="{{ route('categories.category.show', $category->id ) }}"
-                                class="btn btn-sm btn-info" title="Show Category">
-                                <span class="fas fa-eye" aria-hidden="true"></span> Open
-                            </a>
-                            @endcan
-                            @can('edit-categories')
-                            <a href="{{ route('categories.category.edit', $category->id ) }}"
-                                class="btn btn-sm btn-primary" title="Edit Category">
-                                <span class="fas fa-pen" aria-hidden="true"></span> Edit
-                            </a>
-                            @endcan
+                        <div class="float-right">
 
-                            @can('delete-categories')
-                            {!! Form::button('<span class="fas fa-trash" aria-hidden="true"></span> Delete',
-                            [
-                            'type' => 'submit',
-                            'class' => 'btn btn-sm btn-danger',
-                            'title' => 'Delete Category',
-                            'onclick' => 'return confirm("' . 'Click Ok to delete Category.' . '")'
-                            ])
-                            !!}
-                            @endcan
+                            <a href="{{ route('services.service.index', $category->id ) }}" class="btn btn-sm btn-info"
+                                title="Show Category">
+                                <span class="fas fa-eye" aria-hidden="true"></span> Category Services
+                            </a>
+                            <div class="btn-group btn-group-xs" role="group">
+                                @can('view-categories')
+                                <a href="{{ route('categories.category.show', $category->id ) }}"
+                                    class="btn btn-sm btn-info" title="Show Category">
+                                    <span class="fas fa-eye" aria-hidden="true"></span> Open
+                                </a>
+                                @endcan
+                                @can('edit-categories')
+                                <a href="{{ route('categories.category.edit', $category->id ) }}"
+                                    class="btn btn-sm btn-primary" title="Edit Category">
+                                    <span class="fas fa-pen" aria-hidden="true"></span> Edit
+                                </a>
+                                @endcan
+
+                                @can('delete-categories')
+                                {!! Form::button('<span class="fas fa-trash" aria-hidden="true"></span> Delete',
+                                [
+                                'type' => 'submit',
+                                'class' => 'btn btn-sm btn-danger',
+                                'title' => 'Delete Category',
+                                'onclick' => 'return confirm("' . 'Click Ok to delete Category.' . '")'
+                                ])
+                                !!}
+                                @endcan
+                            </div>
                         </div>
                         {!! Form::close() !!}
                     </td>

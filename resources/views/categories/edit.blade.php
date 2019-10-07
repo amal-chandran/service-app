@@ -12,7 +12,7 @@
                 <span class="fas fa-th-list" aria-hidden="true"></span> All List
             </a>
 
-            @can('create-addresses')
+            @can('create-categories')
             <a href="{{ route('categories.category.create') }}" class="btn btn-success" title="Create New Category">
                 <span class="fas fa-plus" aria-hidden="true"></span> Create New
             </a>

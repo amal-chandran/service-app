@@ -189,6 +189,12 @@
                 ->addClass("nav nav-pills nav-sidebar flex-column")
                 ->actionIf(Auth::user()->can('menu-dashboard'),"DashboardController@index",'<i class="nav-icon fas fa-tachometer-alt"></i> Dashboard')
                 ->actionIf(Auth::user()->can('menu-users'),"UsersController@index",'<i class="nav-icon fas fa-users"></i> Users')
+                ->actionIf(Auth::user()->can('menu-services'),"ServicesController@index",'<i class="nav-icon fas fa-users"></i> Services')
+                ->actionIf(Auth::user()->can('menu-reviews'),"ReviewsController@index",'<i class="nav-icon fas fa-users"></i> Reviews')
+                ->actionIf(Auth::user()->can('menu-messages'),"MessagesController@index",'<i class="nav-icon fas fa-users"></i> Messages')
+                ->actionIf(Auth::user()->can('menu-enquiries'),"EnquiriesController@index",'<i class="nav-icon fas fa-users"></i> Enquiries')
+                ->actionIf(Auth::user()->can('menu-categories'),"CategoriesController@index",'<i class="nav-icon fas fa-users"></i> Categories')
+                ->actionIf(Auth::user()->can('menu-addresses'),"AddressesController@index",'<i class="nav-icon fas fa-users"></i> Addresses')
                 ->actionIf(Auth::user()->can('menu-roles'),"RolesController@index",'<i class="nav-icon fas fa-shield-alt"></i> Roles')
                 ->actionIf(Auth::user()->can('menu-permissions'),"PermissionsController@index",'<i class="nav-icon fas fa-shield-alt"></i> Permissions')
                 }}
